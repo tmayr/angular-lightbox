@@ -12,6 +12,9 @@ app.directive('ngLightbox', ['$compile', function($compile) {
         }
 
         var options = angular.extend(defaults, angular.fromJson(attr.ngLightbox));
+        
+        // check if element is passed by the user
+        options.element = typeof options.element === 'string' ? document.getElementById(options.element) : options.element;
 
         var add_overlay = function(){
             if(document.getElementById('overlay')) return;
