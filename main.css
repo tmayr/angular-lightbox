@@ -1,0 +1,49 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+}
+
+#overlay{
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: black;
+    opacity: 0;
+}
+
+#overlay.overlay-active{
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: .8;
+}
+
+.lightbox{
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, .4);
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 0;
+    left: 50%;
+    margin-top: 10%;
+    margin-left: -250px;
+    z-index: 2;
+    opacity: 0;
+    display: none;
+}
+
+.lightbox.lightbox-active{
+    display: inline-block;
+    opacity: 1;
+}
+
+h1{ text-align: center; }
