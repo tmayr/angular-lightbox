@@ -13,10 +13,10 @@ app.directive('ngLightbox', ['$compile', function($compile) {
 
         var options = angular.extend(defaults, angular.fromJson(attr.ngLightbox));
         
-        // check if element is passed by the user
-        options.element = typeof options.element === 'string' ? document.getElementById(options.element) : options.element;
-
         var add_overlay = function(){
+            // check if element is passed by the user
+            options.element = typeof options.element === 'string' ? document.getElementById(options.element) : options.element;
+
             if(document.getElementById('overlay')) return;
             // compiling when we add it to have the close directive kick in
             overlay = $compile('<div id="overlay" ng-lightbox-close/>')(scope);
